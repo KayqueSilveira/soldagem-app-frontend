@@ -1,0 +1,26 @@
+<div class="container" fxLayout="column" fxLayoutGap="16px">
+  <h2>Heating input</h2>
+  <form #soldagemForm="ngForm" (ngSubmit)="onSubmit(soldagemForm)" fxLayout="column" fxLayoutGap="16px">
+    <mat-form-field appearance="fill">
+      <mat-label>Amperagem</mat-label>
+      <input matInput type="number" name="amperagem" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Voltagem</mat-label>
+      <input matInput type="number" name="voltagem" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tempo em segundos</mat-label>
+      <input matInput type="number" name="tempo" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Comprimento em milimetros</mat-label>
+      <input matInput type="number" name="comprimento" ngModel required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Calcular</button>
+  </form>
+</div>

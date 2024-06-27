@@ -1,0 +1,24 @@
+﻿<mat-sidenav-container fullscreen>
+  <mat-sidenav *ngIf="user" #sidenav mode="over">
+    <mat-nav-list>
+      Seja bem-vindo, {{ user.name }}!
+      <a mat-list-item routerLink="/home" (click)="sidenav.close()">Home</a>
+      <a mat-list-item routerLink="/heating-input" (click)="sidenav.close()">Heating Input</a>
+      <a mat-list-item routerLink="/resultados" (click)="sidenav.close()">Resultados</a>
+      <a mat-list-item routerLink="/historico" (click)="sidenav.close()">Histórico</a>
+      <a mat-list-item (click)="logout()">Sair</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-container *ngIf="user">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+  </ng-container>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
